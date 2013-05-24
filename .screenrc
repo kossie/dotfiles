@@ -1,0 +1,26 @@
+defencoding utf8
+encoding utf8 utf8
+escape ^Tt
+
+bind v eval "split -v" focus screen
+bind s eval split focus screen
+
+shelltitle "$ |bash"
+hardstatus alwayslastline  "%`%-w%{=b bw}%n %t%{-}%+w"
+
+# ウィンドウ操作モード
+bind j eval 'echo "Operate window"' 'command -c operate'
+bind -c operate ^]  command
+bind -c operate j eval 'focus down' 'command -c operate'
+bind -c operate k eval 'focus up' 'command -c operate'
+bind -c operate t eval 'focus top' 'command -c operate'
+bind -c operate b eval 'focus bottom' 'command -c operate'
+bind -c operate + eval 'resize +1' 'command -c operate'
+bind -c operate - eval 'resize -1' 'command -c operate'
+bind -c operate s eval 'split' 'command -c operate'
+bind -c operate c eval 'screen' 'command -c operate'
+bind -c operate x eval 'remove' 'command -c operate'
+
+# 垂直分割する。（縦分割対応版screenをインストールする必要あり)
+#bind -c operate v eval 'split -v' 'command -c operate'
+
