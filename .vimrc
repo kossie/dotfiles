@@ -85,16 +85,19 @@ endif
 set laststatus=2                        " ステータスラインを2行に
 set statusline=%<%F\ #%n%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%y%=%l,%c%V%8P
 
-
 " Charset, Line ending -----------------
-set termencoding=utf-8
-set encoding=utf-8
-set fileencodings=iso-2022-jp,utf-8,euc-jp,cp932
-set ffs=unix,dos,mac                    " LF, CRLF, CR
-if exists('&ambiwidth')
-  set ambiwidth=double                " UTF-8の□や○でカーソル位置がずれないようにす
+if has("win32") || has("win64")
+  " sjisはWindows用
+  set encoding=sjis
+else
+  set termencoding=utf-8
+  set encoding=utf-8
+  set fileencodings=iso-2022-jp,utf-8,euc-jp,cp932
+  set ffs=unix,dos,mac                    " LF, CRLF, CR
+  if exists('&ambiwidth')
+    set ambiwidth=double                "UTF-8の□や○でカーソル位置がずれない>
+  endif
 endif
-
 
 " --------------------------------------
 "              my config
