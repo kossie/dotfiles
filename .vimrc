@@ -3,7 +3,6 @@ autocmd!
 set nocompatible                        " use vim
 let mapleader = " "                     " set mapleader
 
-
 " External File ------------------------
 if filereadable(expand('~/.vimrc.plugin'))
   source ~/.vimrc.plugin
@@ -77,7 +76,7 @@ augroup END
 
 " Clipboard ----------------------------
 if has('clipboard')
-  set clipboard+=autoselect
+  set clipboard=unnamed,autoselect
 endif
 
 
