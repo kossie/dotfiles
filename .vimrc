@@ -3,7 +3,6 @@ autocmd!
 set nocompatible                        " use vim
 let mapleader = " "                     " set mapleader
 
-
 " External File ------------------------
 if filereadable(expand('~/.vimrc.plugin'))
   source ~/.vimrc.plugin
@@ -77,7 +76,7 @@ augroup END
 
 " Clipboard ----------------------------
 if has('clipboard')
-  set clipboard+=autoselect
+  set clipboard=unnamed,autoselect
 endif
 
 
@@ -145,14 +144,14 @@ set nocompatible               " Be iMproved
 filetype off                   " Required!
 
 if has('vim_starting')
-      set runtimepath+=~/.vim/bundle/neobundle.vim/
+      set runtimepath+=~/.vim/bundle/neobundle.vim.git/
       call neobundle#rc(expand('~/.vim/bundle/'))
   endif
 
 "NeoBundleプラグイン
 NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/neobundle.vim.git'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'Shougo/neocomplcache'
