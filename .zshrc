@@ -16,7 +16,17 @@ esac
 export NLS_LANG=English_Japan.JA16EUC
 
 # lsの色を指定
-eval "$(dircolors -b)"		# 環境変数 LS_COLORS を設定
+case "${OSTYPE}" in
+#macの場合
+darwin*)
+  export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+  ;;
+#Linux,windows(cygwin)の場合
+Linux*|cygwin*)
+  eval "$(dircolors -b)"		# 環境変数 LS_COLORS を設定
+  ;;
+esac
+
   #----- 手動で設定する場合
 #export LS_COLORS='di=01;34:ln=01;36:ex=01;32:*.tar=01;31:*.gz=01;31'
   #-----
@@ -94,7 +104,7 @@ case "${TERM}" in
             }
         fi
         ;;
-esac 
+esac
 
 # 履歴
 HISTFILE=~/.zsh_history
@@ -109,7 +119,7 @@ autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
-bindkey "^N" history-beginning-search-forward-end 
+bindkey "^N" history-beginning-search-forward-end
   #-----
 
 # 補完
