@@ -137,7 +137,7 @@ setopt list_packed		# 補完候補を詰めて表示
 setopt list_types      # 補完候補表示時にファイルの種類を表示。*, @, /
 
 # ディレクトリ移動
-function chpwd() { ls --color=auto } # cdした後、自動でls
+function chpwd() { ls -G } # cdした後、自動でls
 setopt autocd 			# cdと打たずにディレクトリ名だけで移動
 setopt autopushd		# 自動でpushdする。cd -[tab]で候補表示
 setopt chase_links		# リンクへ移動するとき実際のディレクトリへ移動
@@ -161,7 +161,7 @@ setopt rm_star_wait		# rm * を実行する前に確認
 #####
 
 alias grep='grep --color=auto'
-alias ls='ls --color=auto'
+#alias ls='ls -G'
 alias la='ls -A'
 alias lf='ls -F'
 alias ll='ls -l'
