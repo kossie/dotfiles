@@ -161,7 +161,16 @@ setopt rm_star_wait		# rm * を実行する前に確認
 #####
 
 alias grep='grep --color=auto'
+
+case "${OSTYPE}" in
+darwin*)
 alias ls='ls -G'
+;;
+linux*)
+alias ls='ls --color'
+;;
+esac
+
 alias la='ls -A'
 alias lf='ls -F'
 alias ll='ls -l'
