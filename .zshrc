@@ -161,12 +161,15 @@ setopt rm_star_wait		# rm * を実行する前に確認
 #####
 
 alias grep='grep --color=auto'
-#alias ls='ls -G'
+alias ls='ls -G'
 alias la='ls -A'
 alias lf='ls -F'
 alias ll='ls -l'
 alias rr='rm -r'
 alias vi='vim'
+
+alias tmux='tmuxx'
+
 
 #####
 ##### ホストごとの設定があれば読み込む
